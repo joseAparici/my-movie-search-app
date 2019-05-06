@@ -1,0 +1,35 @@
+<ng-container *ngIf="currentMovieSearchResultData">
+  <div fxLayout="row">
+    <div *ngIf="!currentMovieSearchResultData || currentMovieSearchResultData.length<1"
+         class="initial-text"
+         fxFlex="100%"
+         fxLayoutAlign="center"
+         [innerHTML]="movieListLabels.INITIAL_TEXT">
+    </div>
+  </div>
+  <div
+    class="search-results"
+    infiniteScroll
+    [infiniteScrollDistance]="0.1"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()">
+    <div *ngFor="let item of currentMovieSearchResultData; let i = index; let even = even;"
+         fxLayout="row"
+         fxLayoutGap="2%">
+      <div fxFlex="49%">
+        <mms-movie-item
+          *ngIf="even"
+          [movie]=currentMovieSearchResultData[i]
+          [medianRate]=moviesMedianRate>
+        </mms-movie-item>
+      </div>
+      <div fxFlex="49%">
+        <mms-movie-item
+          *ngIf="even && currentMovieSearchResultData[i+1]"
+          [movie]=currentMovieSearchResultData[i+1]
+          [medianRate]=moviesMedianRate>
+        </mms-movie-item>
+      </div>
+    </div>
+  </div>
+</ng-container>

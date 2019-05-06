@@ -1,0 +1,34 @@
+<div
+  class="movie-content"
+  fxLayout="row"
+  *ngIf="movie">
+  <img
+    fxFlex="35%"
+    fxFlex.lt-md="100%"
+    class="movie-image"
+    mat-card-md-image
+    src={{movie.poster.fullPath}}>
+  <img
+    class="movie-image-favorite"
+    src="assets/static/img/add_favorite.svg">
+    <mat-card
+      fxShow.lt-md="false"
+      fxFlex="65%"
+      fxLayout="column">
+      <mms-movie-item-header
+        fxFlex="30%"
+        [title]=movie.title
+        [rating]=movie.rating
+        [releaseDate]=movie.releaseDate
+        [genres]=movie.genres
+        [medianRate]=medianRate>
+      </mms-movie-item-header>
+      <mms-movie-item-body
+        fxFlex="50%"
+        [overview]=movie.overview>
+      </mms-movie-item-body>
+      <mms-movie-item-footer
+        fxFlex="10%">
+      </mms-movie-item-footer>
+    </mat-card>
+</div>

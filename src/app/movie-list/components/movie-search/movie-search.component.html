@@ -1,0 +1,14 @@
+<div fxLayout="row">
+  <mat-form-field fxFlex="49%">
+    <input
+      matInput
+      placeholder={{movieListSearchLabels.INPUT_PLACEHOLDER}}
+      (keyup.enter)="search()"
+      [(ngModel)]="searchTerm"/>
+  </mat-form-field>
+  <button
+    mat-button
+    (click)="search()">
+    {{movieListSearchLabels.BUTTON}}
+  </button>
+</div>

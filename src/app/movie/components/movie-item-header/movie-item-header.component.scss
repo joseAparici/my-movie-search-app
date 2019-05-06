@@ -1,0 +1,29 @@
+.movie-title {
+  font-size: 2vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-rating {
+  font-size: 2vw;
+  color: rgba(0,0,0,.54);
+}
+
+.movie-subtitle {
+  margin-top: 1vw;
+}
+
+.movie-genres {
+  font-size: 1.2vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: rgba(0,0,0,.54);
+  text-align: right;
+}
+
+.movie-date {
+  margin-left: 0.3vw;
+  font-size: 1.2vw;
+}

@@ -1,0 +1,29 @@
+<div fxLayout="row">
+  <div fxFlex="75%"
+       class="movie-title">
+    {{title}}
+  </div>
+  <div fxFlex="25%"
+       class="movie-rating"
+       fxLayoutAlign="end space-between center">
+    <span>{{rating}}</span>
+    <img
+      *ngIf="rating >= medianRate"
+      src="assets/static/img/rating_star.svg">
+  </div>
+</div>
+<div fxLayout="row"
+     class="movie-subtitle">
+  <div fxFlex="35%"
+    class="movie-date">
+    <fa-icon [icon]="['fas', 'calendar']"></fa-icon>
+    <span>
+      {{releaseDate | date: 'yyyy'}}
+    </span>
+  </div>
+  <div
+    fxFlex="65%"
+    class="movie-genres">
+    {{genresCommaList}}
+  </div>
+</div>
